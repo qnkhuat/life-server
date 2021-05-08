@@ -7,6 +7,6 @@ module.exports = withBundleAnalyzer({
     FIREBASE_STORAGEBUCKET: FIREBASE_STORAGEBUCKET ? FIREBASE_STORAGEBUCKET : "mylife-stories.appspot.com",
     FIREBASE_PROJECTID: FIREBASE_PROJECTID? FIREBASE_PROJECTID : "mylife-stories",
     FIREBASE_PRIVATEKEY: process.env.FIREBASE_PRIVATKEY,
-    FIREBASE_CLIENTEMAIL: FIREBASE_CLIENTEMAIL ? : FIREBASE_CLIENTEMAIL "firebase-adminsdk-46bv6@mylife-stories.iam.gserviceaccount.com"
+    FIREBASE_CLIENTEMAIL: FIREBASE_CLIENTEMAIL ? FIREBASE_CLIENTEMAIL : "firebase-adminsdk-46bv6@mylife-stories.iam.gserviceaccount.com"
   }
 })
