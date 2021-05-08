@@ -4,9 +4,9 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 module.exports = withBundleAnalyzer({
   env: {
-    FIREBASE_STORAGEBUCKET: FIREBASE_STORAGEBUCKET ? FIREBASE_STORAGEBUCKET : "mylife-stories.appspot.com",
-    FIREBASE_PROJECTID: FIREBASE_PROJECTID? FIREBASE_PROJECTID : "mylife-stories",
-    FIREBASE_PRIVATEKEY: process.env.FIREBASE_PRIVATKEY,
-    FIREBASE_CLIENTEMAIL: FIREBASE_CLIENTEMAIL ? FIREBASE_CLIENTEMAIL : "firebase-adminsdk-46bv6@mylife-stories.iam.gserviceaccount.com"
+    FIREBASE_STORAGE_BUCKET: process.env.FIREBASE_STORAGE_BUCKET ? process.env.FIREBASE_STORAGE_BUCKET : "mylife-stories.appspot.com",
+    FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID ? process.env.FIREBASE_PROJECT_ID : "mylife-stories",
+    FIREBASE_PRIVATE_KEY: process.env.FIREBASE_PRIVAT_KEY,
+    FIREBASE_CLIENT_EMAIL: process.env.FIREBASE_CLIENT_EMAIL ? process.env.FIREBASE_CLIENT_EMAIL : "firebase-adminsdk-46bv6@mylife-stories.iam.gserviceaccount.com"
   }
 })
