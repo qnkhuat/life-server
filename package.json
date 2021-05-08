@@ -9,7 +9,9 @@
     "serve": "firebase emulators:start --export-on-exit=./.firestore-export --import ./.firestore-import"
   },
   "dependencies": {
+    "@firebase/app": "^0.6.21",
     "@next/bundle-analyzer": "^10.2.0",
+    "firebase": "^9.0.0-beta.1",
     "firebase-admin": "^9.7.0",
     "next": "10.2.0",
     "react": "17.0.2",
@@ -17,6 +19,5 @@
     "react-dom": "17.0.2",
     "uuid": "^8.3.2"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
