@@ -1,6 +1,6 @@
 import { firestore, storageGetUrl } from "../../../../lib/firebase/server";
 import isAuthenticated from "../../../../lib/firebase/middleware";
-import { runMiddleware } from "../../../../lib/util";
+import { cors, runMiddleware } from "../../../../lib/util";
 
 const getUser = async (req, res) => {
   try {
@@ -26,6 +26,7 @@ const updateUser = async (req, res) => {
 }
 
 export default async (req, res) => {
+  await runMiddleware(req, res, cors);
   switch (req.method){
     case "GET":
       await getUser(req, res);

@@ -1,6 +1,6 @@
 import { firestore } from "../../../../../lib/firebase/server";
 import isAuthenticated from "../../../../../lib/firebase/middleware";
-import { runMiddleware } from "../../../../../lib/util";
+import { cors, runMiddleware } from "../../../../../lib/util";
 
 const createStory = async (req, res) => {
   req.body['addedDate'] = new Date().toISOString();
@@ -12,6 +12,7 @@ const createStory = async (req, res) => {
 }
 
 export default async (req, res) => {
+  await runMiddleware(req, res, cors);
   switch (req.method){
     case "POST":
       await runMiddleware(req, res, isAuthenticated);

@@ -1,6 +1,6 @@
 import { firestore, storageGetUrl } from "../../../lib/firebase/server";
 import isAuthenticated from "../../../lib/firebase/middleware";
-import { runMiddleware } from "../../../lib/util";
+import { cors, runMiddleware } from "../../../lib/util";
 
 const addUser = async (req, res) => {
   const userDocRef = firestore.collection("user").doc(req.body.username);
@@ -43,6 +43,7 @@ const findUserByEmail = async (req, res) => {
 }
 
 export default async (req, res) => {
+  await runMiddleware(req, res, cors);
   switch (req.method){
     case "GET":
       await findUserByEmail(req, res);

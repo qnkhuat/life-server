@@ -1,4 +1,5 @@
 import { firestore } from "../../lib/firebase/server";
+import { cors, runMiddleware } from "../../lib/util";
 
 const getAllStories = async (req, res) => {
   try {
@@ -17,6 +18,7 @@ const getAllStories = async (req, res) => {
 export default async (req, res) => {
   switch (req.method){
     case "GET":
+      await runMiddleware(req, res, cors);
       await getAllStories(req, res);
       break;
     default:

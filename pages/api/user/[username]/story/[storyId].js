@@ -1,6 +1,6 @@
 import { firestore, storageGetUrl } from "../../../../../lib/firebase/server";
 import isAuthenticated from "../../../../../lib/firebase/middleware";
-import { runMiddleware } from "../../../../../lib/util";
+import { cors, runMiddleware } from "../../../../../lib/util";
 
 const getStory = async (req, res) => {
   try {
@@ -30,6 +30,7 @@ const updateStory = async (req, res) => {
 
 
 export default async (req, res) => {
+  await runMiddleware(req, res, cors);
   switch (req.method){
     case "GET":
       await getStory(req, res);
